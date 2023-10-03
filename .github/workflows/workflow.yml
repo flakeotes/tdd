@@ -9,6 +9,8 @@ on:
 
 jobs:
   build:
+    steps:
+      name: Checkout
+      uses: actions/checkout@v3
     runs-on: ubuntu-latest
-    container:
-      - python:3.9-slim
+    container: python:3.9-slim
