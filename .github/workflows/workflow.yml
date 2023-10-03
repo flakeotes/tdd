@@ -10,7 +10,9 @@ on:
 jobs:
   build:
     steps:
-      name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip | pip install -r requirements.txt
     runs-on: ubuntu-latest
     container: python:3.9-slim
